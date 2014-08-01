@@ -1,8 +1,8 @@
 
-var cadena_total = "Érase una vez, unos zombies mordelones empezaron a morder gente.";
+var cadena_total;
 
 var indice_actual = 0;
-var total_lenght = cadena_total.length;
+var total_lenght;
 
 var gui_text;
 
@@ -16,6 +16,10 @@ var play_state =
         var y = game.world.height/2;
 
         gui_text = this.game.add.text(100, 100, "", style);
+        
+        cadena_total = JSON.parse(game.cache.getText('game_data')).texto[0];
+        console.log(cadena_total);
+        total_lenght = cadena_total.length;
     },
 
     crear_estilo: function (tam_fuente, nom_fuente, hex_color)
