@@ -4,7 +4,7 @@ var load_state =
     {
         game.stage.backgroundColor = "#3D3632";
         game.load.spritesheet('button', 'Resources/Graphics/spritesheet.png', 193, 71); 
-        game.load.text('game_data', 'Resources/JSON/Datos.json');
+        game.load.text('game_data', 'Resources/JSON/Escenas.json');
     },
     
     create: function ()

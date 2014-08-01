@@ -1,10 +1,11 @@
 
-var cadena_total;
+var datos_json;
+var gui_text;
 
-var indice_actual = 0;
+var cadena_total;
 var total_lenght;
 
-var gui_text;
+var indice_actual = 0;
 
 var play_state =
 {
@@ -17,9 +18,10 @@ var play_state =
 
         gui_text = this.game.add.text(100, 100, "", style);
         
-        cadena_total = JSON.parse(game.cache.getText('game_data')).texto[0];
-        console.log(cadena_total);
-        total_lenght = cadena_total.length;
+        datos_json = JSON.parse(game.cache.getText('game_data'));
+        
+        this.cargar_escena(3);
+        
     },
 
     crear_estilo: function (tam_fuente, nom_fuente, hex_color)
@@ -35,5 +37,13 @@ var play_state =
             indice_actual += 0.3;
             gui_text.content = cadena_total.substring(0, Math.round(indice_actual));
         }
+    },
+    
+    cargar_escena: function (id_escena)
+    {
+        cadena_total = datos_json.Escenas[id_escena].texto;
+        total_lenght = cadena_total.length;       
+        
+        indice = 0;
     }
 };
