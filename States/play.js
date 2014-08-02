@@ -42,27 +42,29 @@ var play_state =
     
     cargar_escena: function (id_escena)
     {
-		
-		
         cadena_total = datos_json.Escenas[id_escena].texto;
-        total_lenght = cadena_total.length;       
+        total_lenght = cadena_total.length; 
+        indice_actual = 0;
         this.buttons = [];
 		console.log(cadena_total);
-		for (var i = 0; i < datos_json.Escenas[id_escena].botones.length; i++)	{
+		for (var i = 0; i < datos_json.Escenas[id_escena].botones.length; i++)	
+        {
 			this.buttons.push( game.add.button(100, 200+i*100, 'button', this.on_click, this, 2, 1, 0));
 			this.buttons[i].name = datos_json.Escenas[id_escena].botones[i].destino;
 		}
 
 	},
 	
-	on_click: function(button){
-		
+	on_click: function(button)
+    {
 		console.log(button);
 		cadena_total = "";
 		total_lenght = 0;
 		gui_text.destroy;
 		for(var i = 0; i < this.buttons.length; i++)
+        {
 			this.buttons[i].destroy;
+        }
 		this.cargar_escena(button.name);
 	}
 };
