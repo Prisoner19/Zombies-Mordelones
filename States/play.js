@@ -21,7 +21,6 @@ var play_state =
         datos_json = JSON.parse(game.cache.getText('game_data'));
         
 		console.log(datos_json);
-		this.flag =false;
         this.cargar_escena("1-1-1");
         
     },
@@ -43,10 +42,12 @@ var play_state =
     
     cargar_escena: function (id_escena)
     {
+		
+		
         cadena_total = datos_json.Escenas[id_escena].texto;
         total_lenght = cadena_total.length;       
         this.buttons = [];
-		
+		console.log(cadena_total);
 		for (var i = 0; i < datos_json.Escenas[id_escena].botones.length; i++)	{
 			this.buttons.push( game.add.button(100, 200+i*100, 'button', this.on_click, this, 2, 1, 0));
 			this.buttons[i].name = datos_json.Escenas[id_escena].botones[i].destino;
@@ -59,6 +60,7 @@ var play_state =
 		console.log(button);
 		cadena_total = "";
 		total_lenght = 0;
+		gui_text.destroy;
 		for(var i = 0; i < this.buttons.length; i++)
 			this.buttons[i].destroy;
 		this.cargar_escena(button.name);
