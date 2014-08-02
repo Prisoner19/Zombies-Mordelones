@@ -7,7 +7,7 @@ var menu_state =
         var x = game.world.width/2;
         var y = game.world.height/2;
         
-        var text = this.game.add.text(100, 150, "Machucha el botón para empezar", style);
+        var text = this.game.add.text(100, 150, "Machuca el botón para empezar", style);
         
         var button = game.add.button(100, 200, 'button', this.on_click, this, 2, 1, 0);
     },
