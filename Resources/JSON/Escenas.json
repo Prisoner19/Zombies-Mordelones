@@ -4,20 +4,12 @@
 		"1-1-1": 
 		{
 			"id":"1-1-1",
-			"texto":"Érase una vez, unos zombies mordelones empezaron a morder gente.",
+			"texto":"Eran las catorce horas. Casi las quince de un día de agosto. Había llevado a mi esposa\ny a mi hija al centro comercial. Lina, sentada sobre mis hombros, conversaba conmigo\nmientras Diane pensaba en las cosas que faltaban comprar. ",
 			"botones":
 			[
 				{
-					"texto":"Este botón te lleva a 1-1-2",
+					"texto":"Siguiente",
 					"destino": "1-1-2"
-				},
-				{
-					"texto":"Este botón te lleva a 1-1-3",
-					"destino": "1-1-3"
-				},
-				{
-					"texto":"Este botón te lleva a 1-1-4",
-					"destino": "1-1-4"
 				}
 			]
 		},

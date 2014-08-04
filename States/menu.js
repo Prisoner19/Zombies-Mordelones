@@ -2,14 +2,10 @@ var menu_state =
 {
     create: function ()
     {
-        var style = this.crear_estilo(14, "candara", "#ffffff");
-
         var x = game.world.width/2;
         var y = game.world.height/2;
         
-        var text = this.game.add.text(100, 150, "Machuca el botón para empezar", style);
-        
-        var button = game.add.button(100, 200, 'button', this.on_click, this, 2, 1, 0);
+        var button = new LabelButton(this.game, 100, 200, 'button', "Empezar", this.on_click, this, 2, 1, 0);
     },
     
     on_click : function ()

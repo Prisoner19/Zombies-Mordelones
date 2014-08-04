@@ -5,7 +5,10 @@ var gui_text;
 var cadena_total;
 var total_lenght;
 
+var ID_escena_actual;
 var indice_actual = 0;
+
+var cadena_mostrada = false;
 
 var play_state =
 {
@@ -38,6 +41,11 @@ var play_state =
             indice_actual += 0.3;
             gui_text.content = cadena_total.substring(0, Math.round(indice_actual));
         }
+        else if(cadena_mostrada == false)
+        {
+            cadena_mostrada = true;
+            this.mostrar_botones();
+        }
     },
     
     cargar_escena: function (id_escena)
@@ -45,15 +53,21 @@ var play_state =
         cadena_total = datos_json.Escenas[id_escena].texto;
         total_lenght = cadena_total.length; 
         indice_actual = 0;
-        this.buttons = [];
-		console.log(cadena_total);
-		for (var i = 0; i < datos_json.Escenas[id_escena].botones.length; i++)	
-        {
-			this.buttons.push( game.add.button(100, 200+i*100, 'button', this.on_click, this, 2, 1, 0));
-			this.buttons[i].name = datos_json.Escenas[id_escena].botones[i].destino;
-		}
-
+        cadena_mostrada = false;
+        ID_escena_actual = id_escena;
+        console.log(ID_escena_actual);
 	},
+    
+    mostrar_botones: function()
+    {
+        this.buttons = [];
+		
+		for (var i = 0; i < datos_json.Escenas[ID_escena_actual].botones.length; i++)	
+        { 
+			this.buttons.push(new LabelButton(this.game, 100, 200+i*50, 'button', datos_json.Escenas[ID_escena_actual].botones[i].texto, this.on_click, this, 2, 1, 0));
+			this.buttons[i].name = datos_json.Escenas[ID_escena_actual].botones[i].destino;
+		}
+    },
 	
 	on_click: function(button)
     {
@@ -61,10 +75,12 @@ var play_state =
 		cadena_total = "";
 		total_lenght = 0;
 		gui_text.destroy;
-		for(var i = 0; i < this.buttons.length; i++)
+        
+        for(var i = this.buttons.length-1; i >= 0; i--)
         {
-			this.buttons[i].destroy;
+            this.buttons[i].destroy();
         }
+
 		this.cargar_escena(button.name);
 	}
 };
