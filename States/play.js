@@ -36,6 +36,12 @@ var play_state =
     
     update: function()
     {
+        if(game.input.activePointer.isDown == true && cadena_mostrada == false)
+        {
+            indice_actual = total_lenght;
+            gui_text.content = cadena_total.substring(0, Math.round(indice_actual));
+        }
+        
         if(indice_actual < total_lenght)
         {
             indice_actual += 0.3;
