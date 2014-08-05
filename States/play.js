@@ -24,7 +24,7 @@ var play_state =
         datos_json = JSON.parse(game.cache.getText('game_data'));
         
 		console.log(datos_json);
-        this.cargar_escena("1-1-1");
+        this.cargar_escena("1.1");
         
     },
 

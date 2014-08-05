@@ -1,83 +1,68 @@
 {
 	"Escenas":
 	{	
-		"1-1-1": 
+		"1.1": 
 		{
-			"id":"1-1-1",
-			"texto":"Eran las catorce horas. Casi las quince de un día de agosto. Había llevado a mi esposa\ny a mi hija al centro comercial. Lina, sentada sobre mis hombros, conversaba conmigo\nmientras Diane pensaba en las cosas que faltaban comprar. ",
+			"id":"1.1",
+			"texto":"Vi mi reloj: eran las catorce horas de un día de agosto. Había llevado a mi esposa y a mi hija\nal centro comercial. Lina, sentada sobre mis hombros, conversaba conmigo mientras Diane\npensaba en las cosas que faltaban comprar. ",
 			"botones":
 			[
 				{
 					"texto":"Siguiente",
-					"destino": "1-1-2"
+					"destino": "1.2"
 				}
 			]
 		},
-		"1-1-2": 
+		"1.2": 
 		{
-			"id":"1-1-2",
+			"id":"1.2",
 			"texto":"Quedaban aún tres tiendas por visitar. Mientras me quejaba mentalmente por el cansancio,\nDiane acarició mi mano:\n―Falta poco ―dijo sonriendo.",
 			"botones":
 			[
 				{
 					"texto":"Siguiente",
-					"destino": "1-1-3"
+					"destino": "1.3"
 				}
 			]
 		},
-		"1-1-3": 
+		"1.3": 
 		{
-			"id":"1-1-3",
+			"id":"1.3",
 			"texto":"―¿Por qué no vas con Lina a comprar un par de helados? ―continuó― Yo puedo terminar\nde hacer las compras.",
 			"botones":
 			[
 				{
 					"texto":"Aceptar",
-					"destino": "1-1-4"
+					"destino": "1-1.1"
 				},
 				{
 					"texto":"Rechazar",
-					"destino": "1-1-5"
+					"destino": "1-2.1"
 				}
 			]
 		},
-		"1-1-4": 
+		"1-1.1": 
 		{
-			"id":"1-1-4",
+			"id":"1-1.1",
 			"texto":"Sólo el avatar, maestro de los 4 elementos podía salvarnos.\nPero cuando el mundo más lo necesitaba, desapareció...",
 			"botones":
 			[
-				{
-					"texto":"Este botón te lleva a 1-1-1",
-					"destino": "1-1-1"
-				},
-				{
-					"texto":"Este botón te lleva a 1-1-2",
-					"destino": "1-1-2"
-				},
-				{
-					"texto":"Este botón te lleva a 1-1-3",
-					"destino": "1-1-3"
-				}
+
 			]
 		},
-        "1-1-5": 
+        "1-2.1": 
 		{
-			"id":"1-1-5",
-			"texto":"Sólo el avatar, maestro de los 4 elementos podía salvarnos.\nPero cuando el mundo más lo necesitaba, desapareció...",
+			"id":"1-2.1",
+			"texto":"Camino a la tienda de helados, Lina empezó a acariciar mi cabello mientras se sujetaba de él.\nAl llegar, compré dos helados: uno de fresa y otro de chocolate.\n―Yo quiero el de fresa, papi―",
 			"botones":
 			[
 				{
-					"texto":"Este botón te lleva a 1-1-1",
-					"destino": "1-1-1"
+					"texto":"Darle el helado de fresa.",
+					"destino": "1-2.2"
 				},
 				{
-					"texto":"Este botón te lleva a 1-1-2",
-					"destino": "1-1-2"
-				},
-				{
-					"texto":"Este botón te lleva a 1-1-3",
-					"destino": "1-1-3"
+					"texto":"Darle el helado de chocolate.",
+					"destino": "1-2.3"
 				}
 			]
 		}
