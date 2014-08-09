@@ -10,6 +10,10 @@ var indice_actual = 0;
 
 var cadena_mostrada = false;
 
+var indice_sonido = 0.3;
+var final = false;
+
+
 var play_state =
 {
     create: function ()
@@ -19,6 +23,10 @@ var play_state =
         var x = game.world.width/2;
         var y = game.world.height/2;
 
+		this.zombie_sound = this.game.add.audio('zombie',1,true);
+		this.zombie_bite = this.game.add.audio('bite');
+		this.zombie_sound.play('',0,indice_sonido,true);	
+		
         gui_text = this.game.add.text(100, 100, "", style);
         
         datos_json = JSON.parse(game.cache.getText('game_data'));
@@ -47,21 +55,54 @@ var play_state =
             indice_actual += 0.3;
             gui_text.content = cadena_total.substring(0, Math.round(indice_actual));
         }
+		
         else if(cadena_mostrada == false)
         {
             cadena_mostrada = true;
             this.mostrar_botones();
         }
+		
+		if(datos_json.Escenas[ID_escena_actual].mecanica == "laberinto"
+		   &&datos_json.Escenas[ID_escena_actual].estado != 2
+		   &&!final){
+			indice_sonido += 0.7/(datos_json.Escenas[ID_escena_actual].tiempo*60);
+			this.zombie_sound.volume = indice_sonido;
+			console.log(this.zombie_sound.volume);
+		}
+		
+		if(indice_sonido>=1
+		   &&!final){
+			this.zombie_sound.stop();
+			this.zombie_bite.play();
+			alert("!!Te atraparon los zombies!!");
+			final = true;
+		}
     },
     
     cargar_escena: function (id_escena)
     {
-        cadena_total = datos_json.Escenas[id_escena].texto;
+        if(datos_json.Escenas[id_escena].mecanica == "laberinto"
+		  && datos_json.Escenas[id_escena].estado == 0){
+			this.zombie_sound.volume = indice_sonido;
+			this.zombie_sound.loop = true;
+			console.log(this.zombie_sound);
+			
+			
+		} else if(datos_json.Escenas[id_escena].mecanica == "laberinto"
+		  && datos_json.Escenas[id_escena].estado == 1){
+			indice_sonido -= 0.7/(datos_json.Escenas[id_escena]);
+		} else if(datos_json.Escenas[id_escena].mecanica == "laberinto"
+		  && datos_json.Escenas[id_escena].estado == 2){
+			this.zombie_sound.stop();
+			indice_sonido = 0.3;
+		}	
+		
+		cadena_total = datos_json.Escenas[id_escena].texto;
         total_lenght = cadena_total.length; 
         indice_actual = 0;
         cadena_mostrada = false;
         ID_escena_actual = id_escena;
-        console.log(ID_escena_actual);
+        
 	},
     
     mostrar_botones: function()
