@@ -5,6 +5,11 @@
 		{
 			"id":"1.1",			
 			"texto":"Vi mi reloj: eran las catorce horas de un día de agosto. Había llevado a mi esposa y a mi hija\nal centro comercial. Lina, sentada sobre mis hombros, conversaba conmigo mientras Diane\npensaba en las cosas que faltaban comprar. ",
+            "mecanica":
+            {
+                "tipo":"panel",
+                "clave":"451X"
+            },
 			"botones":
 			[
 				{
@@ -16,11 +21,7 @@
 		"1.2": 
 		{
 			"id":"1.2",
-			"mecanica":"laberinto",
-			"estado":0,
 			"texto":"Quedaban aún tres tiendas por visitar. Mientras me quejaba mentalmente por el cansancio,\nDiane acarició mi mano:\n―Falta poco ―dijo sonriendo.",
-			"audio":"zombie",
-			"tiempo":15,
 			"botones":
 			[
 				{
@@ -32,9 +33,7 @@
 		"1.3": 
 		{
 			"id":"1.3",
-			"mecanica":"laberinto",
 			"texto":"―¿Por qué no vas con Lina a comprar un par de helados? ―continuó― Yo puedo terminar\nde hacer las compras.",
-			"tiempo":5,
 			"botones":
 			[
 				{
@@ -50,10 +49,7 @@
 		"1-1.1": 
 		{
 			"id":"1-1.1",
-			"mecanica":"laberinto",
-			"estado":1,
 			"texto":"Sólo el avatar, maestro de los 4 elementos podía salvarnos.\nPero cuando el mundo más lo necesitaba, desapareció...",
-			"tiempo":5,
 			"botones":
 			[
 
@@ -62,10 +58,7 @@
         "1-2.1": 
 		{
 			"id":"1-2.1",
-			"mecanica":"laberinto",
-			"estado":2,
 			"texto":"Camino a la tienda de helados, Lina empezó a acariciar mi cabello mientras se sujetaba de él.\nAl llegar, compré dos helados: uno de fresa y otro de chocolate.\n―Yo quiero el de fresa, papi―",
-			"tiempo":0,
 			"botones":
 			[
 				{

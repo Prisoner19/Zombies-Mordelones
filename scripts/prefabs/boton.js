@@ -1,4 +1,4 @@
-var LabelButton = function(game, x, y, key, label, callback,
+var Boton = function(game, x, y, key, label, callback,
                        callbackContext, overFrame, outFrame, downFrame, upFrame)
 {
     Phaser.Button.call(this, game, x, y, key, callback,
@@ -22,10 +22,10 @@ var LabelButton = function(game, x, y, key, label, callback,
     game.add.existing( this );
 };
  
-LabelButton.prototype = Object.create(Phaser.Button.prototype);
-LabelButton.prototype.constructor = LabelButton;
+Boton.prototype = Object.create(Phaser.Button.prototype);
+Boton.prototype.constructor = Boton;
  
-LabelButton.prototype.setLabel = function( label ) {
+Boton.prototype.setLabel = function( label ) {
     
    this.label.setText(label);
  
