@@ -52,11 +52,8 @@ Relato.prototype.update = function()
 
 Relato.prototype.terminar_mostrar = function()
 {
-    console.log(cadena_mostrada);
-    if(this.cadena_mostrada == false)
+    if(cadena_mostrada == false)
     {
-        cadena_mostrada = true;
-        console.log("aaa");
         indice_actual = total_lenght;
         this.content = cadena_total.substring(0, Math.round(indice_actual));
     }

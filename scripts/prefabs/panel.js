@@ -1,4 +1,4 @@
-var Panel = function(game, x, y, frame) 
+var Panel = function(game, x, y, clave, frame) 
 {  
     Phaser.Sprite.call(this, game, x, y, 'panel', frame);
     game.add.existing(this);

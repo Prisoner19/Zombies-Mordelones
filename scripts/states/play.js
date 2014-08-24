@@ -18,19 +18,5 @@ var play_state =
     update: function()
     {
 
-    },
-	
-	on_click: function(button)
-    {
-		cadena_total = "";
-		total_lenght = 0;
-		gui_text.destroy;
-        
-        for(var i = this.buttons.length-1; i >= 0; i--)
-        {
-            this.buttons[i].destroy();
-        }
-
-		this.cargar_escena(button.name);
-	}, 
+    }
 };

@@ -39,3 +39,13 @@ Escena.prototype.update = function()
         this.texto_escena.terminar_mostrar();
     }
 };
+
+Escena.prototype.on_click = function(button)
+{
+    for(var i = this.buttons.length-1; i >= 0; i--)
+    {
+        this.buttons[i].destroy();
+    }
+
+    this.cargar_escena(button.name);
+};
