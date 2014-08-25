@@ -17,7 +17,8 @@ Escena.prototype.constructor = Escena;
 Escena.prototype.cargar_escena = function(id)
 {
     this.id = id;
-    this.texto_escena.set_texto(datos_json.Escenas[id].texto);
+    this.texto_escena.set_texto(datos_json.Escenas[this.id].texto);
+    this.verificar_mecanica();
 };
 
 Escena.prototype.mostrar_botones = function() 
@@ -35,7 +36,6 @@ Escena.prototype.update = function()
 {
     if(this.game.input.activePointer.isDown == true)
     {
-        console.log("click");
         this.texto_escena.terminar_mostrar();
     }
 };
@@ -48,4 +48,24 @@ Escena.prototype.on_click = function(button)
     }
 
     this.cargar_escena(button.name);
+};
+
+Escena.prototype.verificar_mecanica = function()
+{
+    if(datos_json.Escenas[this.id].mecanica != null)
+    {
+        switch(datos_json.Escenas[this.id].mecanica.tipo)
+        {
+            case "panel": this.crear_panel(); break;
+        
+        
+        
+        }
+    }
+};
+
+Escena.prototype.crear_panel = function()
+{
+    console.log("creando panel");
+    var pan = new Panel(this.game, 100, 100, datos_json.Escenas[this.id].mecanica.clave);
 };
