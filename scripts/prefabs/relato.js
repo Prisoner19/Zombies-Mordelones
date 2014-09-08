@@ -7,8 +7,10 @@ var escena_padre;
 var Relato = function(game, x, y, ref_escena) 
 {  
     var estilo = {
-        'font':'14px candara',
-        'fill':'white'
+        'font':'14px Century Schoolbook',
+        'fill':'black',
+        'wordWrap': 'true',
+        'wordWrapWidth': '600'
     };
     
     Phaser.Text.call(this, game, x, y, "", estilo);
@@ -38,10 +40,11 @@ Relato.prototype.set_texto = function (texto)
 
 Relato.prototype.update = function() 
 {
+    console.log(indice_actual);
     if(indice_actual < total_lenght)
     {
         indice_actual += 0.3;
-        this.content = cadena_total.substring(0, Math.round(indice_actual));
+        this.setText(cadena_total.substring(0, Math.round(indice_actual)));
     }	
     else if(cadena_mostrada == false)
     {
@@ -55,6 +58,6 @@ Relato.prototype.terminar_mostrar = function()
     if(cadena_mostrada == false)
     {
         indice_actual = total_lenght;
-        this.content = cadena_total.substring(0, Math.round(indice_actual));
+        this.setText(cadena_total.substring(0, Math.round(indice_actual)));
     }
 };

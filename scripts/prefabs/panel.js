@@ -2,6 +2,9 @@ var numeros_clave;
 var string_clave;
 var indice_clave;
 
+var audio_zombies;
+var timer_zombies;
+
 var Panel = function(game, x, y, clave, frame) 
 {  
     Phaser.Sprite.call(this, game, x, y, 'panel', frame);
@@ -41,7 +44,7 @@ Panel.prototype.check_key_down = function(e)
     console.log(e.keyCode);
     if(indice_clave <= this.numeros_clave.length)
     {
-        if(e.keyCode - 48 == this.numeros_clave[indice_clave])
+        if(e.keyCode - 48 == this.numeros_clave[indice_clave] || e.keyCode - 96 == this.numeros_clave[indice_clave] )
         {
             console.log("success");
             indice_clave += 1;
